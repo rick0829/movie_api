@@ -1,0 +1,23 @@
+{
+  "name": "movie_api",
+  "version": "1.0.0",
+  "description": "myFlix movie app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rick0829/movie_api.git"
+  },
+  "author": "Rick Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rick0829/movie_api/issues"
+  },
+  "homepage": "https://github.com/rick0829/movie_api#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
+}
