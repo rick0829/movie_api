@@ -175,3 +175,4 @@ Timestamp: Tue Jun 07 2022 19:56:03 GMT-0700 (Pacific Daylight Time)
 URL: /documentation
 Timestamp: Tue Jun 07 2022 19:56:15 GMT-0700 (Pacific Daylight Time)
 
+::1 - - [11/Jun/2022:22:57:09 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.63 Safari/537.36"
