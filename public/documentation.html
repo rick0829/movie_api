@@ -1,2 +1,143 @@
-<h1>Documentation</h1>
-<p>The purpose of this page is to explain how the myFlix app works</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Documentation For myFlix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<body>
+  <h1>Documentation for myFlix</h1>
+<div>
+  <table style="width: 80%">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>URL</th>
+        <th>HTTP Method</th>
+        <th>Request body data format</th>
+        <th>Response body data format</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Return a list of movies to the user</td>
+        <td>/movies</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data about all ofthe movies.</td>
+      </tr>
+      <tr>
+        <td>Return data about a single movie by title to the user</td>
+        <td>/movies/[movieTitle]</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data, containing title, genre, description, and director of a single movie by title to the user</td>
+      </tr>
+      <tr>
+        <td>Return data about a genre by name</td>
+        <td>/movies/genre/[genreTitle]</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data about the movie's genre.
+          <pre>
+            <code>
+              {
+                name: '',
+                description: '',
+              }
+            </code>
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Return data about a director</td>
+        <td>/movies/directors/[directorsName]</td>
+        <td>GET</td>
+        <td>NONE</td>
+        <td>A JSON object holding data about a director.
+          <pre>
+              <code>
+                {
+                  name: '',
+                  bio: '',
+                  birth: '',
+                  death: '',
+                }
+              </code>
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Allow new users to register</td>
+        <td>/users</td>
+        <td>POST</td>
+        <td>A JSON object holding data about a user to add, structured like following:
+          <pre>
+            <code>
+              {
+                username: '',
+                password: '',
+                email: '',
+                birthday: '',
+                favoriteMovies: []
+              }
+            </code>
+          </pre>
+        </td>
+        <td>A JSON object holding data about a user that was added, including an ID:
+          <pre>
+            <code>
+              {
+                id: '',
+                username: '',
+                password: '',
+                email: '',
+                birthday: '',
+                favoriteMovies: []
+              }
+            </code>
+          </pre>
+        </td>
+      </tr>
+      <tr>
+        <td>Allow users to update their user info</td>
+        <td>/users/[id]</td>
+        <td>PUT</td>
+        <td>NONE</td>
+        <td>A message indicating their user info was sucessfully updated</td>
+      </tr>
+      <tr>
+        <td>Allow users to add a movie to list of favorites</td>
+        <td>/movies/[id]/[movieTitle]</td>
+        <td>POST</td>
+        <td>NONE</td>
+        <td>A message indicating that the movie was sucessfully added to the their list.</td>
+      </tr>
+      <tr>
+        <td>Allow users to remove a movie from list of favorites</td>
+        <td>/movies/[id]/[movieTitle]</td>
+        <td>DELETE</td>
+        <td>NONE</td>
+        <td>A message indicating the movie was sucessfully removed.</td>
+      </tr>
+      <tr>
+        <td>Allow exisiting users to deregister</td>
+        <td>/users/[id]</td>
+        <td>DELETE</td>
+        <td>NONE</td>
+        <td>A message indicating the user was sucessfully deregistered.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+
+</div>
+</body>
+</html>
