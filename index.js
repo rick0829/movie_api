@@ -130,7 +130,7 @@ app.put('/users/:id', (req, res) => {
 });
 
 //POST request that allows users to add a movie to list of favorites
-app.post('/users/:id/movieTitle', (req, res) => {
+app.post('/users/:id/:movieTitle', (req, res) => {
   const { id, movieTitle } = req.params;
   let user = users.find(user => user.id == id);
 
@@ -143,7 +143,7 @@ app.post('/users/:id/movieTitle', (req, res) => {
 });
 
 //DELETE request that allows users to delete a movie from the list of favorites
-app.delete('/users/:id/movieTitle', (req, res) => {
+app.delete('/users/:id/:movieTitle', (req, res) => {
   const { id, movieTitle } = req.params;
   let user = users.find(user => user.id == id);
 
@@ -162,7 +162,7 @@ app.delete('/users/:id', (req, res) => {
   let user = users.find(user => user.id == id);
 
   if (user) {
-    users = user.filter(user => user.id != id);
+    users = users.filter(user => user.id != id);
     res.status(200).send('User has been deleted');
   } else {
     res.status(400).send('No such user');
