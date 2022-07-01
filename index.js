@@ -32,11 +32,19 @@ app.use(cors({
 const Movies = Models.Movie;
 const Users = Models.User;
 
-//Database name might be myFlix and NOT test
+//Renmote Database
+mongoose.connect(process.env.CONNECTION_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+//Local Database
+/*
 mongoose.connect('mongodb://localhost:27017/test', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+*/
 
 //var __dirname = path.resolve();
 
