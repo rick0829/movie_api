@@ -49,6 +49,7 @@ mongoose.connect('mongodb://localhost:27017/test', {
 //var __dirname = path.resolve();
 
 app.use(bodyParser.json());
+app.use(morgan('common'))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let auth = require('./auth')(app);
@@ -151,6 +152,7 @@ app.post('/users',
       return res.status(422).json({ errors: errors.array() });
     }
 
+app.post('/users', (req, res) => {
     let hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested username already exists
       .then((user) => {
@@ -281,7 +283,7 @@ app.get('/documentation', (req, res) => {
   res.sendFile('public/documentation.html', { root: __dirname });
 });
 
-//app.use(express.static('public'));
+app.use(express.static('public'));
 
 //looks for a pre-configured port number in the environment variable
 const port = process.env.PORT || 8080;
