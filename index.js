@@ -1,6 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
-instantiate
+
 const bodyParser = require('body-parser');
 
 const uuid = require('uuid');
@@ -15,7 +15,7 @@ const cors = require('cors');
 
 const { check, validationResult } = require('express-validator');
 
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com',];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
