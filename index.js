@@ -45,7 +45,8 @@ app.get('/', (req, res) => {
 });
 
 // (Read) and responds a json with all movies in database
-app.get('/movies', passport.authenticate("jwt", { session: false }), (req, res) => {
+/*app.get('/movies', passport.authenticate("jwt", { session: false }), (req, res) => {*/
+app.get("/movies", function (req, res) {
   Movies.find()
     .then((movies) => {
       res.status(201).json(movies);
